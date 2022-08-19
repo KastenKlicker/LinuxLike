@@ -1,0 +1,60 @@
+name: LinuxLike
+version: '1.0'
+main: de.kastenklicker.linuxlike.LinuxLike
+api-version: 1.19
+author: KastenKlicker
+description: Adds Linux like commands (Directories = warp points)
+commands:
+  man:
+    description: Replacement for help command
+    usage: /man <plugin-name>
+
+  dpkg:
+    description: Lists all installed plugins
+    usage: /dpkg -l or /pacman -Q
+    aliases:
+      - pacman
+
+  poweroff:
+    description: Stops the server
+    usage: /poweroff
+
+  adduser:
+    description: Adds player to whitelist
+    usage: /adduser <name> or /useradd <name>
+    aliases:
+      - useradd
+
+  deluser:
+    description: Removes player from whitelist or his op rights
+    usage: /deluser <name> for whitelist and /deluser <name> sudo/wheel for deop
+    aliases:
+      - userdel
+
+  usermod:
+    description: Gives user op
+    usage: /usermod -aG sudo <name> or /usermod -aG wheel <name>
+
+  exit:
+    description: Disconnect you from the Server
+    usage: /exit
+
+  cd:
+    description: Teleports you to a "directory"
+    usage: /cd <directory>
+    permission: LinuxLike.cd
+
+  mkdir:
+    description: Creates a new "directory"
+    usage: /mkdir <name>
+    permission: LinuxLike.mkdir
+
+  ls:
+    description: Lists all "directories"
+    usage: /ls
+    permission: LinuxLike.ls
+
+  rm:
+    description: Removes "directory"
+    usage: /rm -rf <name>
+    permission: LinuxLike.rm
